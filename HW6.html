@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div style="height:100px;width:100px; background-color:#000; color:#fff;" ></div> -->
+<p id="p"></p>
+<style>
+.center{
+   
+    margin-top: auto;
+    margin:auto;
+    display: block;
+    text-align:center;
+}
+div {
+    position: relative;
+    display:inline-block;
+    margin:6px;
+    height:250px;
+    width:250px;
+}
+ img {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+</style>
+<script>
+
+//let x=prompt("ВВедите количество блоков");
+
+let x=prompt("Введите количество блоков");
+
+let colors=["0", "1","2","3","4","5","6","7","8","9","a","b","c","d","e","f",];
+     let color="#";
+     let colorArr=[];
+     for (i=0;i<=x;i++){
+colorArr[i]="#";
+     }
+     console.log(colorArr);
+   
+ for (j=0; j<6;j++){
+ color+=colors[Math.floor(Math.random()*colors.length)];
+  
+for(k=0;k<x;k++){
+colorArr[k]+=colors[Math.floor(Math.random()*colors.length)];
+}
+}
+console.log(color);
+    console.log(colorArr);
+
+ 
+let b="";
+for (m=1;m<=x;m++){
+    b+=`<div style="background-color:${colorArr[m-1]};" ><p>
+    <img class= "center"; style="height:100px;width:100px;" src="images/${m}.jpg" alt="Здания">    
+    </p></div>`;
+}
+p.innerHTML=b;
+
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
