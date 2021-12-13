@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap');
+
+.card{ 
+/* .poster, .title, .price, .rank, .bluray, .action { */
+    border: 1px solid red;
+
+}
+
+body{
+    font-family: 'Oswald', sans-serif;
+
+}
+
+#cards{
+width: 1000px;
+height: 800px;
+margin: 50px auto;
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+.card{
+    width: 300px ;
+    height: 675px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.poster {
+
+width: 280px;
+height: 420px;
+margin-top: 10px;
+
+
+}
+.title{
+    width: 280px;
+    height: 75px;
+    color: #616161;
+    font-size: 30px;
+    line-height: 1;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+}
+.price{
+
+width: 280px;
+height: 45px;
+display: flex;
+justify-content: space-evenly ;
+}
+.price >div{
+    display: flex;
+    align-items: center;
+}
+
+.price > div:nth-child(1){
+font-size: 30px;
+font-weight: 600;
+color: #242323;
+}
+.price > div:nth-child(2){
+    font-size: 19px;
+    font-weight: 600;
+    color: #868282;
+    text-decoration: line-through;
+    }
+    .rank{
+
+        width: 280px;
+height: 40px;
+display: flex;
+justify-content: center;
+align-items: center;
+
+    }
+    .material-icons{
+        color:#ffcf00;
+    }
+    .buy{
+        width: 280px;
+        height: 75px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    .bluray{
+
+        width: 280px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-content: flex-start;
+      position: relative;
+      top:-520px;
+
+    }
+    .action{
+        width: 100px;
+        height: 80px;
+        position: relative;
+        top:-395px;
+        left: -80px;
+
+    }
