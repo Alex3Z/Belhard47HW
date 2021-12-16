@@ -2,8 +2,10 @@
 
 .card{ 
 /* .poster, .title, .price, .rank, .bluray, .action { */
+    
     border: 1px solid red;
-
+   
+    
 }
 
 body{
@@ -16,8 +18,9 @@ width: 1000px;
 height: 800px;
 margin: 50px auto;
 display: flex;
-justify-content: space-around;
-align-items: center;
+justify-content: center;
+align-items: center ;
+
 }
 .card{
     width: 300px ;
@@ -34,6 +37,21 @@ height: 420px;
 margin-top: 10px;
 
 
+}
+.poster>img:nth-child(2){
+
+    position: relative;
+    top:-110px;
+    left: 10px;
+    /* display: none; */
+    /* visibility: visible; */
+    /* opacity: 0; */
+}
+.poster>img:nth-child(3){
+
+    position: relative;
+    top:-310px;
+    left: -15px;
 }
 .title{
     width: 280px;
@@ -90,7 +108,7 @@ align-items: center;
         align-items: center;
     
     }
-    .bluray{
+    /* .bluray{
 
         width: 280px;
         height: 60px;
@@ -109,4 +127,4 @@ align-items: center;
         top:-395px;
         left: -80px;
 
-    }
+    } */
