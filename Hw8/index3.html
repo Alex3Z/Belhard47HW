@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Карточка</title>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+    
+        <link rel="stylesheet" href="css/Style.css">
+
+</head>
+<body>
+    <label class="switch">
+        <input type="checkbox" onclick="changeAct()" id="act">
+  Акция
+      </label>
+    
+      <div id="cards">
+
+<!--  -->
+<script>
+
+//Checkbox
+
+
+//Задаем параметры карточки
+
+let card={
+
+poster:"poster.jpg",
+title1:"Тайная жизнь",
+title2:"Домашних животных",
+player:"blu-ray.png",
+action:"action.png",
+sales: true,
+cost:50,
+currency:"руб.",
+actPerc:.9,//проценты акции
+rating:2.5,
+order:"buy.jpg",
+
+}
+
+let card1={
+
+poster:"toy4.jpg",
+title1:"История игрушек 4",
+title2:"Приключения Вилкинса",
+player:"blu-ray.png",
+action:"action.png",
+sales: true,
+cost:60,
+currency:"руб.",
+actPerc:.9,//проценты акции
+rating:3.5,
+order:"buy.jpg",
+
+}
+let card2={
+
+poster:"ferd.jpg",
+title1:"Фердинанд",
+title2:"Побег из коровника",
+player:"blu-ray.png",
+action:"action.png",
+sales: true,
+cost:40,
+currency:"руб.",
+actPerc:.9,//проценты акции
+rating:3.5,
+order:"buy.jpg",
+
+}
+//Полная стоимость
+let fullCost=`${card.cost},00 ${card.currency}`; 
+console.log(fullCost);
+//Стоимость акции
+let actionCost=0;
+actionCost=card.cost*card.actPerc;
+saleCost=`${Math.round(actionCost)},00 ${card.currency}`
+
+console.log(saleCost);
+
+//Рейтинг
+
+// let stars ="";
+// for (i=0;i<=card.rating;i++){
+//     if(card.rating==0) stars+="star_border ";
+//     stars+="star ";
+// }
+//     stars+="star_border";
+ 
+let stars=["star_border", "star_border", "star_border", "star_border", "star_border"];
+
+for (i=0;i<card.rating;i+=1)
+
+if (card.rating<=5 && stars[i] == "star_border" )
+        stars[i] = "star";
+else  stars=stars;      
+
+if(Number.isInteger(card.rating)==false)
+stars[`${Math.round(card.rating)-1}`]="star_half";
+let stars1=stars.join(' ');
+
+//вывод внешнего вида стоимости
+let price = ""; let vis='';
+if (card.sales==true){
+   price= `<div>${saleCost}</div>
+<div>${fullCost}</div>`;
+vis='1';
+}else{
+    price=`<div>${fullCost}</div>`;
+vis='0';
+}
+
+//Массив
+
+let arr=[card, card1, card2];
+console.log(arr);
+
+
+    //Вывод результата
+    let s="";
+for (j=0;j<arr.length;j++){
+
+s+= `<div class="card">
+<div class="poster">
+    <img src="images/${arr[j].poster}" >
+    <img style="opacity:${vis}"src="images/${arr[j].action}" alt="">
+    <img src="images/${arr[j].player}" alt="">
+</div>
+
+<div class="title">
+<div>${arr[j].title1}</div>
+<div>${arr[j].title2}</div>
+
+</div>
+
+<div class="price">
+${price}
+</div>
+
+<div class="rank">
+    <span class="material-icons">
+        ${stars1}
+        </span>
+</div>
+
+<div class="buy">
+
+    <img src="images/${arr[j].order}" alt="">
+</div>`;
+
+
+}
+cards.innerHTML=s;
+</script>
