@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+
+.card{
+/* border: crimson 1px solid; */
+    width: 1020px ;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+   
+   }
+section{
+    /* border: crimson 1px solid; */
+    width: 360px ;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+#a{
+    /* border: crimson 1px solid; */
+    width: 720px ;
+    height: 560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin:0 auto;
+
+
+}
+    
+</style>
+
+</head>
+<body>
+<div id="p" class="card"></div>
+
+<!-- <div class="card">   
+    <section>
+    <img src="images/minsk1.jpg" alt="Красный костел" onclick="openBig()" id="pic1">
+    <p>Костел</p>
+</section>
+<section>
+    <img src="images/minsk2.jpg" alt="Троицкое предместье" id="pic2"   >
+    <p>Троицкое</p>
+</section>
+    <section>
+    <img src="images/mir.gif" alt="Мирский замок" id="pic3">
+    <p>Мир</p>
+    </section>
+    </div>  -->
+<div id="a" ></div>
+<script>
+let card1=[{
+
+pic:"minsk1.jpg",
+picName:"Костел",
+opisanie:"В храме святого Симеона и святой Елены"+"<br>"
++ "находится полномасштабная копия Туринской Плащаницы."
+},
+{
+pic:"minsk2.jpg",
+picName:"Троицкое",
+opisanie:"Троицкое предместье — исторический район города Минска,"+"<br>"
++ " расположенный в северо-восточной части исторического центра на левом берегу реки Свислочь."
+},
+
+{
+pic:"mir.gif",
+picName:"Мир",
+opisanie:"Построенный в начале XVI в. магнатом Ю. И. Ильиничем замок стал первым" 
++"<br>"+ "частнособственническим замком на землях Белоруссии."
+}
+];
+
+let s="";
+for (i=0;i<card1.length;i++){
+ 
+s+=`<div>   
+    <section>
+    <img src="images/${card1[i].pic}" onclick="openBig()"  >
+    <p>${card1[i].picName}</p>
+</section>
+    </div> `;
+};
+p.innerHTML=s;
+console.log(s);
+
+
+function openBig(){
+    
+let c=`
+    <img src="images/${card1[0].pic}" onclick="del()">
+    <p>${card1[0].opisanie}</p>
+    `;
+   
+a.innerHTML=c;
+};
+
+function del(){
+
+a.innerHTML="";
+
+}
+
+    </script>
+
+</body>
+</html>
