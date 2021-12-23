@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article >
+        <p>Alphabet</p>
+        <section id="s">    
+        <p> A B C D E F G </p>
+        <p>come on out and play with me.</p>
+        <p>H I J </p>
+        <p>come and play.</p> 
+        <p>K L M </p>
+        <p>come with them. </p>
+        <p>N O P </p>
+        <p>near the tree. </p>
+        <p>Q R S T U V </p>
+        <p>Oh, how happy we will be. </p>
+        <p>W X Y Z </p>
+        <p>Lot's of fun for you and me. </p>
+        </section>
+</article>    
+ <button onclick="opn()">Считалочка</button>
+<div id="box"></div>
+<script>
+
+function opn(){
+box.innerHTML=`<article >
+        <p>Alphabet</p>
+        <section>    
+        <p> A B C D E F G </p>
+        <p>come on out and play with me.</p>
+        <p>H I J </p>
+        <p>come and play.</p> 
+        <p>K L M </p>
+        <p>come with them. </p>
+        <p>N O P </p>
+        <p>near the tree. </p>
+        <p>Q R S T U V </p>
+        <p>Oh, how happy we will be. </p>
+        <p>W X Y Z </p>
+        <p>Lot's of fun for you and me. </p>
+        </section>
+</article>`;
+
+}
+
+let alfa=document.querySelectorAll("section>p:nth-child(odd)");
+let alfaText=alfa[0].innerHTML;
+
+console.log(alfaText);
+console.log(alfa[0]);
+console.log(alfa[1]);
+console.log(alfa[2]);
+console.log(alfa[3]);
+console.log(alfa[4]);
+console.log(alfa[5]);
+
+
+ let a="";
+
+for (let key of alfa){
+a+=key.innerHTML;
+}
+
+box.innerHTML=a;
+
+
+let sec=document.getElementById("s");
+let m=sec.getElementsByTagName("p");
+
+
+console.log(sec);
+console.log(m);
+for (let key of m){
+key.style.cssText=`
+border: 2px red dotted;
+color:magenta;
+font-weight: 600;`
+;
+}
+    </script>
+
+
+</body>
+</html>
