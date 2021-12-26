@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        table{
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        th, td{
+            padding: 10px 20px;
+            border: 1px solid #000;
+        }
+    </style>
+
+
+
+    
+      <div id="tab"></div>
+<script>
+    let x=5;//количество строк
+    let y=5; //количество столбцов
+ 
+let table = document.createElement('table');
+table.style="color:black;background:white";
+
+let count=0;
+for (row = 0; row < x; row++) {
+    
+    tr = document.createElement('tr');
+    tr.style="color:green;background:blue";
+    for (cell = 0; cell < y; cell++) {
+        count++;
+        td = document.createElement('td');
+        tr.append(td);
+        td.innerHTML = `Ячейка ${count}`;
+        td.style="color:red;background:yellow";
+        
+    }
+    table.append(tr);
+}
+document.getElementById('tab').append(table);
+
+let qwe=document.querySelectorAll("td");
+console.log(qwe);
+function del(){
+for( let key of qwe){
+
+    key.style="";
+}
+};
+
+function del1(){
+for( let key of qwe){
+
+    key.innerHTML="";
+}
+};
+
+
+  setTimeout(del, 2000);
+  setTimeout(del1, 4000);
+ setTimeout("table.remove()",6000); -->
+
+
+</script>
+</body>
+</html>
